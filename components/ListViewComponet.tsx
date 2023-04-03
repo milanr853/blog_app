@@ -8,7 +8,7 @@ function ListViewComponet() {
     const bloglist: Array<Object> =
         [
             {
-                title: 'My first blog when wrote by me further',
+                title: 'My first blog ',
                 content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta ex veritatis eos sit impedit asperiores iste corporis ratione fuga tempore? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta ex veritatis eos sit impedit asperiores iste corporis ratione fuga tempore? ',
                 image: 'https://bit.ly/3nEpRlN',
                 id: 1

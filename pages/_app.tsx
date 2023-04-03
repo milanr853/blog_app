@@ -5,10 +5,10 @@ import Header from '@/components/Header'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ChakraProvider>
       <GlobalStyles />
       <Header title='Blogs' />
       <Component {...pageProps} />
-    </>
+    </ChakraProvider>
   )
 }

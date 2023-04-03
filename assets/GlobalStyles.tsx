@@ -1,19 +1,20 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
 
-type StyleProps = {}
+type StyleProps = {
+    text?: any
+}
 
 export const GlobalStyles = createGlobalStyle({
     body: {
         margin: 0,
-        background: 'black',
         fontFamily: 'sans-serif',
     }
 })
 
 //////////////////////////
-const subColor = '#2F0F5D'
-const fixDimension = '42px'
+const subColor = '#232739'
+const fixDimension = '35px'
 const headerHeight = '65px'
 //////////////////////////
 
@@ -31,15 +32,14 @@ export const StyledHeader = styled.div`
     font-size:28px;
     font-weight:600;
     letter-spacing:0.25rem;
-    color: ${subColor}
-
+    color: ${subColor};
+    .homeTitle{
+        cursor:pointer
+    }
 `
 
-type StyleProp = {
-    text?: any
-}
 
-export const AddBtn = styled.div<StyleProp>`
+export const AddBtn = styled.div<StyleProps>`
 width:${fixDimension};
 height:${fixDimension};
 border-radius:0.25rem;
@@ -54,39 +54,45 @@ cursor:pointer
 export const AccLogo = styled.div`
 color:white;
 background:${subColor};
-height:${fixDimension};
-border-radius:0.25rem;
+height:40px;
+width:40px;
+border-radius:50%;
+/* border-radius:0.25rem; */
 display:flex;
 justify-content:center;
 align-items:center;
 margin:0 1rem;
 cursor:pointer;
-padding:0 1.5rem;
+/* padding:0 1.5rem; */
 `
 //////////////////////////////////////
 
 export const ViewArea = styled.div`
 box-sizing:border-box;
-padding:3rem 7rem;
-background:white;
+padding:3rem 6rem;
+background:${subColor};
 min-height:calc(100vh - ${headerHeight});
 display:flex;
 align-items:center;
+justify-content:center;
 `
 
 export const BlogListView = styled.div`
+margin-top:5rem;
 width:100%;
 border-radius:1rem;
 .gridContainer{
     width:'100%';
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    grid-auto-rows:450px;
+    grid-auto-rows:500px;
     grid-gap:3rem;
     
     .gridElem{
+        background-color:lightgray;
         cursor:pointer;
         display:flex;
+        border-radius:1rem;
         flex-direction:column;
         .imgSect{
             height:60%;
@@ -94,10 +100,11 @@ border-radius:1rem;
             background-size:cover;
             background-position:center;
             background-repeat: no-repeat;
-            background-color:lightgray;
             display:flex;
             justify-content:center;
             align-items:center;
+            border-top-right-radius:1rem;
+            border-top-left-radius:1rem;
             img{
                 object-fit:contain;
                 height:80%;
@@ -107,14 +114,40 @@ border-radius:1rem;
         }
         .content{
             height:40%;
+            box-sizing:border-box;
+            padding:1.5rem;
             .title{
-                padding:1.5rem 0;
+                margin-bottom:1.5rem;
                 font-size:20px;
                 font-weight:600;
             }
-            .para{}
         }
     }
 }
 `
 /////////////////////////////////
+
+export const Blogview = styled.div`
+width:75%;
+.blogpost{
+    border-radius:1rem;
+    background:lightgray;
+    min-height:500px;
+    width:100%;
+    box-sizing:border-box;
+    padding:1rem 2rem;
+    h2{
+        font-weight:600;
+        font-size:26px;
+        margin-bottom:1rem;
+    }
+}
+.commentsection{
+    margin-top:2rem;
+    border-radius:1rem;
+    background:lightgray;
+    height:125px;
+    width:100%;
+    box-sizing:border-box;
+}
+`
