@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
       <GlobalStyles />
-      <Header title='Blogs' />
+      <Header title='BLOGS' />
       <Component {...pageProps} />
     </ChakraProvider>
   )

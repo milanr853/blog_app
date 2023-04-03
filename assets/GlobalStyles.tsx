@@ -29,7 +29,7 @@ export const StyledHeader = styled.div`
     justify-content:space-between;
     box-sizing:border-box;
     padding:0 2rem;
-    font-size:28px;
+    font-size:30px;
     font-weight:600;
     letter-spacing:0.25rem;
     color: ${subColor};
@@ -149,5 +149,35 @@ width:75%;
     height:125px;
     width:100%;
     box-sizing:border-box;
+}
+`
+////////////////////////////////////////
+
+export const PostCreate = styled.div`
+h1{
+    color:white;
+    font-size:26px;
+    font-weight:600;
+};
+width: 70%; min-height: 350px;
+display:flex;flex-direction:column;
+gap:2rem;
+#heading{
+    height:70px;
+    padding:0 1rem;
+    border-radius:0.5rem
+}
+#blog_content{
+    border-radius:0.5rem;
+    height:200px;
+    padding:1rem;
+    resize:none;
+}
+#fileUploadBtnWrapper{
+    border-radius:0.5rem;
+    padding:0 1rem;
+    background:white;height:70px;
+    display:flex;
+    align-items:center;
 }
 `
