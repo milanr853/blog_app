@@ -73,18 +73,16 @@ function CreateBlog() {
 
 
     return (
-        <ViewArea>
-            <PostCreate>
-                <h1>Create Post</h1>
-                <input id='heading' type="text" placeholder='Title' ref={titleRef} />
-                <textarea id='blog_content' placeholder='Content...' ref={contentRef} />
-                <div id='fileUploadBtnWrapper'>
-                    <input accept='image/png, image/jpeg, image/webp' type="file" name="image_upload" id="image_upload" ref={imageRef} />
-                </div>
+        <PostCreate>
+            <h1>Create Post</h1>
+            <input id='heading' type="text" placeholder='Title' ref={titleRef} />
+            <textarea id='blog_content' placeholder='Content...' ref={contentRef} />
+            <div id='fileUploadBtnWrapper'>
+                <input accept='image/png, image/jpeg, image/webp' type="file" name="image_upload" id="image_upload" ref={imageRef} />
+            </div>
 
-                <Button text='Add Post' handleClick={validateAndPost} />
-            </PostCreate>
-        </ViewArea>
+            <Button text='Add Post' handleClick={validateAndPost} />
+        </PostCreate>
     )
 }
 

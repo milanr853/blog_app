@@ -1,12 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import Header from '@/components/Header'
 import ListViewComponet from '@/components/ListViewComponet'
+import { no_console } from '@/utilities/removeConsoles'
+import React from 'react'
 
-const inter = Inter({ subsets: ['latin'] })
+no_console()
 
 export default function Home() {
+  console.log('dvsdvdfbdrbr')
   return (
     <>
       <ListViewComponet />

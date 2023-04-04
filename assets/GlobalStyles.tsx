@@ -28,7 +28,7 @@ export const StyledHeader = styled.div`
     align-items:center;
     justify-content:space-between;
     box-sizing:border-box;
-    padding:0 2rem;
+    padding:0 5rem;
     font-size:30px;
     font-weight:600;
     letter-spacing:0.25rem;
@@ -62,6 +62,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 margin:0 1rem;
+margin-right:0;
 cursor:pointer;
 /* padding:0 1.5rem; */
 `
@@ -85,10 +86,12 @@ border-radius:1rem;
     width:'100%';
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    grid-auto-rows:500px;
+    /* grid-auto-rows:500px; */
+    grid-auto-rows:auto;
     grid-gap:3rem;
     
     .gridElem{
+        min-height:500px;
         background-color:lightgray;
         cursor:pointer;
         display:flex;
@@ -113,11 +116,10 @@ border-radius:1rem;
             
         }
         .content{
-            height:40%;
+            /* height:40%; */
             box-sizing:border-box;
             padding:1.5rem;
             .title{
-                margin-bottom:1.5rem;
                 font-size:20px;
                 font-weight:600;
             }

@@ -3,6 +3,7 @@ import React from 'react'
 import placeholder from "../assets/images/placeholder.png"
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { FirebaseAuthFunctions } from '@/firebase/firebaseAuth'
 
 function ListViewComponet() {
     const bloglist: Array<Object> =
@@ -34,6 +35,8 @@ function ListViewComponet() {
         ]
 
 
+
+
     const router = useRouter()
 
     const takeMeToBlog = (id: Number) => {
@@ -42,36 +45,34 @@ function ListViewComponet() {
 
 
     return (
-        <ViewArea>
-            <BlogListView>
-                {
-                    bloglist.length ?
-                        <div className='gridContainer' >
-                            {bloglist.map(({ title, content, image, id }: any) => {
-                                return (
-                                    <div className='gridElem' onClick={() => takeMeToBlog(id)} key={id} >
-                                        <div className="imgSect" style={{ backgroundImage: `url("${image}")` }}>
-                                            {!image ? <Image height='200' src={placeholder} alt='blog image' /> : <></>}
+        <BlogListView>
+            {
+                bloglist.length ?
+                    <div className='gridContainer' >
+                        {bloglist.map(({ title, content, image, id }: any) => {
+                            return (
+                                <div className='gridElem' onClick={() => takeMeToBlog(id)} key={id} >
+                                    <div className="imgSect" style={{ backgroundImage: `url("${image}")` }}>
+                                        {!image ? <Image height='200' src={placeholder} alt='blog image' /> : <></>}
+                                    </div>
+                                    <div className="content">
+                                        <div className="title">
+                                            {title.length <= 30 ? title : title.slice(0, 30) + '...'}
                                         </div>
-                                        <div className="content">
-                                            <div className="title">
-                                                {title.length <= 30 ? title : title.slice(0, 30) + '...'}
-                                            </div>
-                                            <div className="para">
-                                                {content.length <= 200 ? content : content.slice(0, 200) + '...'}
-                                            </div>
+                                        <div className="para">
+                                            {content.length <= 200 ? content : content.slice(0, 200) + '...'}
                                         </div>
                                     </div>
-                                )
-                            })}
-                        </div>
-                        :
-                        <div style={noDataAvailable}>
-                            Sorry no blogs available !!
-                        </div>
-                }
-            </BlogListView>
-        </ViewArea>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    :
+                    <div style={noDataAvailable}>
+                        Sorry no blogs available !!
+                    </div>
+            }
+        </BlogListView>
     )
 }
 
